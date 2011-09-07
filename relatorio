@@ -1,8 +1,20 @@
-1. Login to the workshop machine
-2. Copy the example files
-3. List the contents of your openMP subdirectory
-4. Review / compile / run the Hello World example code
+1. Login to the workshop machine OK
+2. Copy the example files OK
+3. List the contents of your openMP subdirectory OK
+4. Review / compile / run the Hello World example code OK
+  1. Take a moment to examine the source code and note how OpenMP directives and library routines
+  are being used.
+  2. Depending upon your language and compiler preference, use one of the following commands to
+  compile the code:
+    gcc -fopenmp omp_hello.c -o hello
+  3. To run the code, simply type the command hello and the program should run.
+  How many threads were created?
+  Why?
+    24 threads, que sao o numero de cores do processador do servidor utilizado. Provavelmente o 
+    default do OpenMP é o número de cores.
 5. Vary the number of threads and re-run Hello World
+  1. Set the number of threads to use by means of the OMP_NUM_THREADS environment variable.
+    export OMP_NUM_THREADS=4
 6. Review / Compile / Run the workshare1 example code
 7. Review / Compile / Run the workshare2 example code
 8. Review / Compile / Run the orphan example code
