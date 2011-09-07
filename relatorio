@@ -15,6 +15,14 @@
 5. Vary the number of threads and re-run Hello World
   1. Set the number of threads to use by means of the OMP_NUM_THREADS environment variable.
     export OMP_NUM_THREADS=4
+  2. Re-run the example code and notice the output.
+  3. Your output should look similar to below. The actual order of output strings may vary.
+    Saída real:
+      Hello World from thread = 0
+      Number of threads = 4
+      Hello World from thread = 3
+      Hello World from thread = 1
+      Hello World from thread = 2
 6. Review / Compile / Run the workshare1 example code
 7. Review / Compile / Run the workshare2 example code
 8. Review / Compile / Run the orphan example code
