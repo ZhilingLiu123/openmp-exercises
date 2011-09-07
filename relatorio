@@ -1,0 +1,12 @@
+1. Login to the workshop machine
+2. Copy the example files
+3. List the contents of your openMP subdirectory
+4. Review / compile / run the Hello World example code
+5. Vary the number of threads and re-run Hello World
+6. Review / Compile / Run the workshare1 example code
+7. Review / Compile / Run the workshare2 example code
+8. Review / Compile / Run the orphan example code
+9. Review / Compile / Run the matrix multiply example code
+10. Get environment information
+11. When things go wrong...
+
