@@ -10,7 +10,7 @@
   3. To run the code, simply type the command hello and the program should run.
   How many threads were created?
   Why?
-    24 threads, que sao o numero de cores do processador do servidor utilizado. Provavelmente o 
+    24 threads, que sao o numero de cores do processador do servidor utilizado. Provavelmente o
     default do OpenMP é o número de cores.
 5. Vary the number of threads and re-run Hello World
   1. Set the number of threads to use by means of the OMP_NUM_THREADS environment variable.
@@ -24,7 +24,31 @@
       Hello World from thread = 1
       Hello World from thread = 2
 6. Review / Compile / Run the workshare1 example code
+  1. After reviewing the source code, use your preferred compiler to compile and run the executable.
+  2. Review the output. Note that it is piped through the sort utility. This will make it easier to view how
+  loop iterations were actually scheduled across the team of threads.
+  3. Run the program a couple more times and review the output. What do you see? Typically, dynamic
+  scheduling is not deterministic. Everytime you run the program, different threads can run different
+  chunks of work. It is even possible that a thread might not do any work because another thread is
+  quicker and takes more work. In fact, it might be possible for one thread to do all of the work.
+  4. Edit the workshare1 source file and change the dynamic scheduling to static scheduling.
+  5. Recompile and run the modified program. Notice the difference in output compared to dynamic
+  scheduling. Specifically, notice that thread 0 gets the first chunk, thread 1 the second chunk, and so
+  on.
+  6. Run the program a couple more times. Does the output change? With static scheduling, the
+  allocation of work is deterministic and should not change between runs, and every thread gets work
+  to do.
+    A saída não muda.
+  7. Reflect on possible performance differences between dynamic and static scheduling.
+    O scheduling dinâmico tem como benefício de performance em relação ao estático a diminuição do
+    tempo ocioso dos processos e o melhor balanceamento de carga entre os processos.
 7. Review / Compile / Run the workshare2 example code
+  1. As before, compile and execute the program after reviewing it.
+  2. Run the program several times and observe any differences in output. Because there are only two
+  sections, you should notice that some threads do not do any work. You may/may not notice that the
+  threads doing work can vary. For example, the first time thread 0 and thread 1 may do the work,
+  and the next time it may be thread 0 and thread 3. It is even possible for one thread to do all of the
+  work. Which thread does work is non-deterministic in this case.
 8. Review / Compile / Run the orphan example code
 9. Review / Compile / Run the matrix multiply example code
 10. Get environment information
