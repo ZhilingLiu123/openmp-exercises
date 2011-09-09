@@ -1,7 +1,7 @@
-1. Login to the workshop machine OK
-2. Copy the example files OK
-3. List the contents of your openMP subdirectory OK
-4. Review / compile / run the Hello World example code OK
+1. Login to the workshop machine
+2. Copy the example files 
+3. List the contents of your openMP subdirectory
+4. Review / compile / run the Hello World example code
   1. Take a moment to examine the source code and note how OpenMP directives and library routines
   are being used.
   2. Depending upon your language and compiler preference, use one of the following commands to
@@ -17,12 +17,6 @@
     export OMP_NUM_THREADS=4
   2. Re-run the example code and notice the output.
   3. Your output should look similar to below. The actual order of output strings may vary.
-    Saída real:
-      Hello World from thread = 0
-      Number of threads = 4
-      Hello World from thread = 3
-      Hello World from thread = 1
-      Hello World from thread = 2
 6. Review / Compile / Run the workshare1 example code
   1. After reviewing the source code, use your preferred compiler to compile and run the executable.
   2. Review the output. Note that it is piped through the sort utility. This will make it easier to view how
@@ -38,6 +32,7 @@
   6. Run the program a couple more times. Does the output change? With static scheduling, the
   allocation of work is deterministic and should not change between runs, and every thread gets work
   to do.
+    A saida foi obtida usando omp_workshare1 | sort.
     A saída não muda.
   7. Reflect on possible performance differences between dynamic and static scheduling.
     O scheduling dinâmico tem como benefício de performance em relação ao estático a diminuição do
