@@ -50,6 +50,7 @@
   and the next time it may be thread 0 and thread 3. It is even possible for one thread to do all of the
   work. Which thread does work is non-deterministic in this case.
 8. Review / Compile / Run the orphan example code
+  1. After reviewing the source code, compile and run the program.
 9. Review / Compile / Run the matrix multiply example code
 10. Get environment information
 11. When things go wrong...
