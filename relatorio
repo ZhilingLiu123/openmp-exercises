@@ -1,5 +1,5 @@
 1. Login to the workshop machine
-2. Copy the example files 
+2. Copy the example files
 3. List the contents of your openMP subdirectory
 4. Review / compile / run the Hello World example code
   1. Take a moment to examine the source code and note how OpenMP directives and library routines
@@ -46,7 +46,25 @@
   work. Which thread does work is non-deterministic in this case.
 8. Review / Compile / Run the orphan example code
   1. After reviewing the source code, compile and run the program.
+  2. Note the result...and the fact that this example will come back to haunt as omp_bug6 later.
 9. Review / Compile / Run the matrix multiply example code
+  1. After reviewing the source code, compile and run the program.
+  2. Review the output. It shows which thread did each iteration and the final result matrix.
+  3. Run the program again, however this time sort the output to clearly see which threads execute
+  which iterations. Do the loop iterations match the SCHEDULE(STATIC,CHUNK) directive for the matrix multiple loop
+  in the code?
+    Sim!
 10. Get environment information
+  1. Starting from scratch, write a simple program that obtains information about your openMP
+  environment. Alternately, you can modify the "hello" program to do this.
+  2. Using the appropriate openMP routines/functions, have the master thread query and print the following:
+    The number of processors available
+    The number of threads being used
+    The maximum number of threads available
+    If you are in a parallel region
+    If dynamic threads are enabled
+    If nested parallelism is supported
+  3. If you need help, you can consult the omp_getEnvInfo example file.
+    Em omp_getEnvInfo temos já todas as funções necessárias para resolver o problema.
 11. When things go wrong...
 
