@@ -67,4 +67,9 @@
   3. If you need help, you can consult the omp_getEnvInfo example file.
     Em omp_getEnvInfo temos já todas as funções necessárias para resolver o problema.
 11. When things go wrong...
+  1. Fails compilation. Solution provided - must compile solution file. 
+  2. Thread identifiers are wrong. Wrong answers.
+    Variáveis i e tid não foram declaradas como private, assim cairam para o default(shared) e assim havia uma
+    condição de corrida dessas variáveis, causando o erro na impressão de tid e no cálculo do resultado, já que
+    o indice do laço for estava compartilhado também.
 
