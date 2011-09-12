@@ -82,4 +82,8 @@
     O arquivo disponibilizado não funcionava para corrigir o erro de overflow causado pelo array gigante 1048x1048 de double.
     Após pesquisar o comando correto para setar o tamanho máximo da pilha, foi possível executar o programa. A solução está em
     omp_bug4fix_mod. A solução apontada no problema e que não funciona está em omp_bug4fix.
+  5. Program hangs. Solution provided - must compile solution file.
+    Problema de de deadlock, a primeira seção setava o lock a, e antes de tirar o lock, já travava o lock b também, enquanto
+    a segunda seção fazia o inverso, travando b e a sem ter destravado nenhuma. O arquivo omp_bug5fix corrige esse problema
+    com a sequencia correta de lock/unlock.
 
