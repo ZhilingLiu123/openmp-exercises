@@ -72,4 +72,14 @@
     Variáveis i e tid não foram declaradas como private, assim cairam para o default(shared) e assim havia uma
     condição de corrida dessas variáveis, causando o erro na impressão de tid e no cálculo do resultado, já que
     o indice do laço for estava compartilhado também.
+    Corrigido em omp_bug2fix.c
+  3.  Run-time error, hang.
+    Erro na existência de um omp barrier orfão, que parava as threads sem ter na verdade nenhuma thread para esperar.
+    Corrigido em omp_bug3fix.c
+  4. Causes a segmentation fault. Solution provided - note that it is a script and will need to be "sourced".
+  For example: "source omp_bug4fix". Be sure to examine the solution file to see what's going on - especially the last line, 
+  where you may need to change the name of the executable to match yours. 
+    O arquivo disponibilizado não funcionava para corrigir o erro de overflow causado pelo array gigante 1048x1048 de double.
+    Após pesquisar o comando correto para setar o tamanho máximo da pilha, foi possível executar o programa. A solução está em
+    omp_bug4fix_mod. A solução apontada no problema e que não funciona está em omp_bug4fix.
 
