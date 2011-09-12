@@ -86,4 +86,12 @@
     Problema de de deadlock, a primeira seção setava o lock a, e antes de tirar o lock, já travava o lock b também, enquanto
     a segunda seção fazia o inverso, travando b e a sem ter destravado nenhuma. O arquivo omp_bug5fix corrige esse problema
     com a sequencia correta de lock/unlock.
+  6. Failed compilation
+    O seguinte erro de compilação ocorre:
+      omp_bug6.c: In function ‘dotprod’:
+      omp_bug6.c:22: error: reduction variable ‘sum’ is private in outer context
+    Isso ocorre pois existem duas variáveis sum locais de main() e de dotprod(), se a declararmos como global, o problema se resolve.
+    Já que assim vai ser realmente possível se ter sum compartilhada no contexto.
+    A solução está em omp_bug6fix.c
+
 
